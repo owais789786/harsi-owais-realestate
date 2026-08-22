@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
-@import "tailwindcss";  
+@import "tailwindcss";
 
 @theme {
-  --font-syne: 'Syne', sans-serif;
 
-  --color-dark: #131315;
-  --color-dark1: #202024;
-  --color-off-white: #FFFFFF;
-  --color-blue: #238FFF;
-  --color-gray: #ADBAC8;
+  /* Fonts */
+  --font-nunito: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-syne: var(--font-syne), sans-serif;
+
+  /* Colors */
+  --color-brand-dark: #0f1e36;
+  --color-brand-navy: #182a4a;
+  --color-brand-accent: #0b132b;
+  --color-brand-gold: #c29b38;
+  --color-brand-text: #ffffff;
+  --color-brand-muted: #cbd5e1;
+
 }

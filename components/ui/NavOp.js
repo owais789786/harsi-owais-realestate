@@ -1,0 +1,38 @@
+'use client'
+import { useState } from 'react'
+import Link from "next/link";
+
+const NavOp = () => {
+    const [opActive, setOpActive] = useState('Home');
+
+    const navOp = [
+        { name: 'Home', ref: '/' },
+        { name: 'Properties', ref: '/properties' },
+        { name: 'About Us', ref: '/about' },
+        { name: 'Services', ref: '/services' },
+        { name: 'Blog', ref: '/blogs' },
+        { name: 'Contact', ref: '/contact' }
+    ];
+
+
+    return (
+        <ul className="flex gap-3 font-syne min-[851px]:flex-row flex-col w-full items-center  ">
+            {navOp.map((op) => {
+
+                return (
+                    <li key={op.name} className="text-white" onClick={() => setOpActive(op.name)}>
+                        <Link href={op.ref} className='group cursor-default'>
+                            <span className='relative text-md'>
+                                {op.name}
+                                <span className={`${opActive === op.name ? 'w-full' : 'w-0'}  bg-brand-text  absolute h-0.5 block -bottom-1 duration-200 group-hover:w-full transition-all`}></span>
+                            </span>
+                        </Link>
+                    </li>
+                )
+            })
+            }
+        </ul>
+    )
+}
+
+export default NavOp

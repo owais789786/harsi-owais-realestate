@@ -1,11 +1,9 @@
-export default function Button({ children, className = '', ...props }) {
-  return (
-    <button
-      type="button"
-      className={`rounded-full bg-blue px-6 py-3 font-semibold text-off-white transition hover:brightness-110 ${className}`}
-      {...props}
-    >
-      {children}
-    </button>
-  );
+function Button({ content, colors }) {
+    return (
+        <button className={`px-3 py-1 border-2 ${colors}  rounded  transition-all font-syne`}>
+            {content}
+        </button>
+    )
 }
+
+export default Button

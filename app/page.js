@@ -1,15 +1,14 @@
-import Hero from '@/components/sections/Hero';
-import PropertiesForSale from '@/components/sections/PropertiesForSale';
-import BlogSection from '@/components/sections/BlogSection';
-import { NewsLetter } from '@/components/sections/NewsLetter';
+import Hero from '@/components/sections/Hero'
+import Scroll from '@/components/sections/Scroll'
+import React from 'react'
 
-export default function Page() {
+const page = () => {
   return (
-    <div>
+    <main>
       <Hero />
-      <PropertiesForSale />
-      <BlogSection />
-      <NewsLetter />
-    </div>
+      <Scroll />
+    </main>
   )
 }
+
+export default page

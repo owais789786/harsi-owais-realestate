@@ -19,7 +19,7 @@ const Hero = () => {
     }
 
     return (
-        <section className='min-h-screen relative bg-black flex justify-center pt-22 pb-10 items-center '>
+        <section className='min-h-screen relative bg-black flex justify-center pt-20 sm:pt-22 pb-10 items-center '>
             <Image
                 src={'/hero3.jpg'}
                 alt='Image'
@@ -28,18 +28,18 @@ const Hero = () => {
                 quality={100}
                 className='object-cover absolute inset-0 object-top'
             />
-            <div className='max-w-310 relative z-10 mt-2 w-full flex flex-col gap-5 items-start  p-4'>
+            <div className='max-w-310 relative z-10 mt-2 w-full flex flex-col gap-2 sm:gap-5 items-start  p-4'>
                 <p className='text-brand-text text-shadow-2xs  font-nunito flex items-center gap-2'>
                     <span className='flex w-15 border-b border-brand-text [text-shadow:0_2px_4px_rgba(0,0,0,1.5)]'></span>
                     Find Your Perfect Space
                 </p>
-                <p className='text-6xl text-brand-accent font-nunito font-bold '>
+                <p className='text-[clamp(35px,10.00px+7.81vw,60px)] text-brand-accent font-nunito font-extrabold'>
                     Find a Place You'll<br /> Love to Live
                 </p>
-                <p className='text-brand-text font-nunito [text-shadow:0_2px_4px_rgba(0,0,0,1.5)] hidden sm:flex'>Discover luxury homes, appartments and commercials <br /> properties for rent sale in prime locations</p>
-                <Button content={'Explore Properties'} colors={'text-brand-text bg-brand-navy border-brand-navy hover:bg-transparent hover:border-brand-text'} />
+                <p className='text-brand-text font-nunito [text-shadow:0_2px_4px_rgba(0,0,0,2.5)] hidden sm:flex'>Discover luxury homes, appartments and commercials <br /> properties for rent sale in prime locations</p>
+                <Button content={'Explore Properties'} colors={'text-brand-text bg-brand-navy hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  border-brand-navy hover:bg-transparent hover:border-brand-text'} />
 
-                <div className='w-full max-w-310 mx-auto bg-brand-navy/30 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6'>
+                <div className='w-full max-w-310 mx-auto mt-3 bg-brand-navy/30 backdrop-blur-md border border-white/10 rounded-2xl p-4 md:p-6'>
 
                     {/* Tabs */}
                     <div className='flex gap-2 mb-4 border-b border-white/10 pb-4'>

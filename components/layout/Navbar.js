@@ -1,6 +1,6 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import { Home, Phone, Menu, X } from "lucide-react";
+import { Home, Menu, X } from "lucide-react";
 import Button from '../ui/Button';
 import NavOp from '../ui/NavOp';
 
@@ -45,11 +45,11 @@ const Navbar = () => {
                 ${showNav ? 'translate-y-0' : '-translate-y-full'} 
                 ${showNavColor ? 'bg-black/30 backdrop-blur-md ' : 'bg-transparent backdrop-blur-none'}
                 }`}>
-                <nav className="max-w-310 w-full min-h-20 px-5 flex justify-between items-center relative">
+                <nav className="max-w-310 w-full min-h-18 sm:min-h-20  px-5 flex justify-between items-center relative">
 
                     <span className="text-white relative flex justify-center shadow-[0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.5)] items-center border rounded-full px-1">
-                        <Home className="absolute text-brand-accent z-0  " size={45} />
-                        <span className="text-2xl relative z-10 font-syne font-bold">Restate</span>
+                        <Home className="absolute text-brand-accent z-0 " size={45} />
+                        <span className="sm:text-2xl text-xl relative z-10 font-syne font-bold">Restate</span>
                     </span>
 
                     <div className='hidden mx-auto w-fit absolute inset-x-0  min-[851px]:flex items-center justify-center'>
@@ -57,8 +57,8 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex  items-center gap-2  text-brand-text'>
-                        <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:border-brand-text bg-brand-navy border-brand-navy'} />
-                        <Menu size={32} className='text-brand-text border-2 p-0.5 rounded cursor-pointer' onClick={() => setShowSideBar(true)} />
+                        <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-navy border-brand-navy'} />
+                        <Menu className='text-brand-text w-6 h-6 sm:w-8 sm:h-8 border-2 p-0.5 rounded cursor-pointer' onClick={() => setShowSideBar(true)} />
                     </div>
 
                 </nav>

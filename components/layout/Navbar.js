@@ -4,6 +4,9 @@ import { Home, Menu, X } from "lucide-react";
 import Button from '../ui/Button';
 import NavOp from '../ui/NavOp';
 
+
+import { HiOutlineHome } from 'react-icons/hi2';
+
 const Navbar = () => {
 
     const [showNav, setShowNav] = useState(true);
@@ -47,17 +50,24 @@ const Navbar = () => {
                 }`}>
                 <nav className="max-w-310 w-full min-h-18 sm:min-h-20  px-5 flex justify-between items-center relative">
 
-                    <span className="text-white relative flex justify-center shadow-[0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.5)] items-center border rounded-full px-1">
-                        <Home className="absolute text-brand-accent z-0 " size={45} />
+                    {/* <span className="text-white bg-brand-navy relative flex justify-center shadow-[0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.5)] items-center border rounded-full px-1">
+                        <Home className="absolute text-brand-darkGold z-0 " size={45} />
                         <span className="sm:text-2xl text-xl relative z-10 font-syne font-bold">Restate</span>
-                    </span>
+                    </span> */}
+
+                    <div className="flex items-center gap-2 text-white font-bold text-xl">
+                        <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-slate-700 bg-brand-darkGold">
+                            <HiOutlineHome className="w-5 h-5 text-white" />
+                        </div>
+                        <span>EstateHub</span>
+                    </div>
 
                     <div className='hidden mx-auto w-fit absolute inset-x-0  min-[851px]:flex items-center justify-center'>
                         <NavOp />
                     </div>
 
                     <div className='flex  items-center gap-2  text-brand-text'>
-                        <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-navy border-brand-navy'} />
+                        <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-darkGold border-brand-darkGold'} />
                         <Menu className='text-brand-text w-6 h-6 sm:w-8 sm:h-8 border-2 p-0.5 rounded cursor-pointer' onClick={() => setShowSideBar(true)} />
                     </div>
 

@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { User, Mail, Phone, FileText, PenLine, Send } from 'lucide-react'
 import Card from '../ui/Card'
 import FormField from '../ui/FormField'
+import Button from '../ui/Button'
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -78,13 +79,7 @@ const ContactForm = () => {
                     />
                 </div>
 
-                <button
-                    type="submit"
-                    className="sm:col-span-2 bg-brand-navy hover:bg-brand-dark text-white font-nunito font-semibold flex items-center justify-center gap-2 w-full sm:w-fit sm:px-8 py-2.5 rounded-xl transition-colors"
-                >
-                    <Send size={16} />
-                    Send Message
-                </button>
+                <Button content={'Send Message'} colors={'text-brand-text hover:text-brand-navy bg-brand-navy hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  border-brand-navy hover:bg-transparent hover:border-brand-navy'} />
             </form>
         </Card>
     )

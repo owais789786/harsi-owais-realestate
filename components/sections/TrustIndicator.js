@@ -28,11 +28,11 @@ const TrustIndicators = () => {
     return (
         <section className="w-full py-10">
             <div className="max-w-310 mx-auto px-5">
-                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-slate-200">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-brand-navy/20">
                     {features.map((feature, index) => (
                         <li key={index} className="lg:px-4 lg:first:pl-0 lg:last:pr-0">
                             <IconFeature icon={feature.icon} title={feature.title} size="sm">
-                                <p>{feature.description}</p>
+                                <p className=''>{feature.description}</p>
                             </IconFeature>
                         </li>
                     ))}

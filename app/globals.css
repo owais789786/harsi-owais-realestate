@@ -4,7 +4,7 @@
   /* Fonts */
   --font-sans: var(--font-nunito);
   --font-nunito: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
-  --font-syne: var(--font-syne), sans-serif;
+  --font-syne: var(--font-nunito), sans-serif;
 
   /* Colors */
   --color-brand-dark: #0f1e36;

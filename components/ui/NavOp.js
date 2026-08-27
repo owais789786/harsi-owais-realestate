@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { usePathname } from 'next/navigation'
 
-const NavOp = ({ stylesDiff, pWrapper,  }) => {
+const NavOp = ({ stylesDiff, pWrapper }) => {
 
     const pathname = usePathname();
 
@@ -23,7 +23,7 @@ const NavOp = ({ stylesDiff, pWrapper,  }) => {
                 {navOp.map((op) => {
                     const isActive = pathname === op.ref
                     return (
-                        <li key={op.name} className="text-white" onClick={() => setOpActive(op.name)}>
+                        <li key={op.name}  className="text-white" onClick={() => setOpActive(op.name)}>
                             <Link href={op.ref} className='group cursor-default'>
                                 <span className='relative text-md'>
                                     {op.name}

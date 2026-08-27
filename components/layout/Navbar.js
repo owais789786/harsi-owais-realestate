@@ -1,5 +1,6 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
+import { usePathname } from 'next/navigation';
 import Button from '../ui/Button';
 import NavOp from '../ui/NavOp';
 
@@ -7,11 +8,11 @@ import NavOp from '../ui/NavOp';
 import { HiOutlineHome } from 'react-icons/hi2';
 
 const Navbar = () => {
-
     const [showNav, setShowNav] = useState(true);
     const [showNavColor, setShowNavColor] = useState(false);
     const [showMenu, setShowMenu] = useState(false);
     const lastScrollY = useRef(0);
+    const pathname = usePathname();
 
     useEffect(() => {
 
@@ -41,17 +42,21 @@ const Navbar = () => {
         );
     }, []);
 
+    useEffect(() => {
+        setShowMenu(false);
+    }, [pathname]);
+
     return (
         <div className={`fixed w-full top-0 ${showNav ? 'translate-y-0' : '-translate-y-full'}  transition-translate duration-300 z-50`}>
-            <header className={`w-full flex justify-center  z-50 
-                ${showNavColor ? 'bg-black/30 backdrop-blur-md ' : 'bg-transparent backdrop-blur-xs'} 
-                }`}>
+            <header className={`w-full flex justify-center transition-all  duration-500 z-50 
+                    ${showNavColor ? 'bg-black/30 backdrop-blur-md ' : 'bg-transparent backdrop-blur-xs'} 
+                    }`}>
                 <nav className="max-w-310 w-full min-h-20 px-5 flex justify-between items-center relative">
 
                     {/* <span className="text-white bg-brand-navy relative flex justify-center shadow-[0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.5)] items-center border rounded-full px-1">
-                        <Home className="absolute text-brand-darkGold z-0 " size={45} />
-                        <span className="sm:text-2xl text-xl relative z-10 font-syne font-bold">Restate</span>
-                    </span> */}
+                            <Home className="absolute text-brand-darkGold z-0 " size={45} />
+                            <span className="sm:text-2xl text-xl relative z-10 font-syne font-bold">Restate</span>
+                        </span> */}
 
                     <div className="flex items-center gap-2 text-white font-bold text-xl">
                         <div className="flex items-center justify-center w-8 h-8 rounded-lg border border-slate-700 bg-brand-darkGold">

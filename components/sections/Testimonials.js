@@ -17,7 +17,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="bg-brand-accent px-5 py-16 text-white">
+        <section className="bg-brand-navy px-5 py-16 text-white">
             <div className="m-auto max-w-310">
                 <p className="font-bold text-brand-gold">TESTIMONIALS</p>
                 <h2 className="mt-2 max-w-md text-3xl font-extrabold">What Our Clients Say About Us</h2>

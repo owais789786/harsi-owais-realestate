@@ -1,10 +1,10 @@
 'use client'
-import { useState } from 'react'
-import Link from "next/link";
-import { usePathname } from 'next/navigation';
 
-const NavOp = () => {
-    // const [opActive, setOpActive] = useState('Home');
+import Link from "next/link"
+import { usePathname } from 'next/navigation'
+
+const NavOp = ({ stylesDiff, pWrapper,  }) => {
+
     const pathname = usePathname();
 
     const navOp = [
@@ -18,22 +18,24 @@ const NavOp = () => {
 
 
     return (
-        <ul className="flex gap-3 font-syne min-[851px]:flex-row flex-col w-full items-center  ">
-            {navOp.map((op) => {
-                const isActive = pathname === op.ref
-                return (
-                    <li key={op.name} className="text-white" onClick={() => setOpActive(op.name)}>
-                        <Link href={op.ref} className='group cursor-default'>
-                            <span className='relative text-md'>
-                                {op.name}
-                                <span className={`${isActive ? 'w-full' : 'w-0'}  bg-brand-text  absolute h-0.5 block -bottom-1 duration-200 group-hover:w-full transition-all`}></span>
-                            </span>
-                        </Link>
-                    </li>
-                )
-            })
-            }
-        </ul>
+        <div className={`${pWrapper}`}>
+            <ul className={`flex gap-4 ${stylesDiff} font-syne w-full items-center  `}>
+                {navOp.map((op) => {
+                    const isActive = pathname === op.ref
+                    return (
+                        <li key={op.name} className="text-white" onClick={() => setOpActive(op.name)}>
+                            <Link href={op.ref} className='group cursor-default'>
+                                <span className='relative text-md'>
+                                    {op.name}
+                                    <span className={`${isActive ? 'w-full' : 'w-0'}  bg-brand-text  absolute h-0.5 block -bottom-1 duration-200 group-hover:w-full transition-all`}></span>
+                                </span>
+                            </Link>
+                        </li>
+                    )
+                })
+                }
+            </ul>
+        </div>
     )
 }
 

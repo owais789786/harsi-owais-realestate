@@ -1,6 +1,5 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
-import { Home, Menu, X } from "lucide-react";
 import Button from '../ui/Button';
 import NavOp from '../ui/NavOp';
 
@@ -11,7 +10,7 @@ const Navbar = () => {
 
     const [showNav, setShowNav] = useState(true);
     const [showNavColor, setShowNavColor] = useState(false);
-    const [showSideBar, setShowSideBar] = useState(false);
+    const [showMenu, setShowMenu] = useState(false);
     const lastScrollY = useRef(0);
 
     useEffect(() => {
@@ -43,12 +42,11 @@ const Navbar = () => {
     }, []);
 
     return (
-        <>
-            <header className={`w-full flex justify-center fixed top-0 z-50 transition-translate duration-300 
-                ${showNav ? 'translate-y-0' : '-translate-y-full'} 
-                ${showNavColor ? 'bg-black/30 backdrop-blur-md ' : 'bg-transparent backdrop-blur-none'}
+        <div className={`fixed w-full top-0 ${showNav ? 'translate-y-0' : '-translate-y-full'}  transition-translate duration-300 z-50`}>
+            <header className={`w-full flex justify-center  z-50 
+                ${showNavColor ? 'bg-black/30 backdrop-blur-md ' : 'bg-transparent backdrop-blur-xs'} 
                 }`}>
-                <nav className="max-w-310 w-full min-h-18 sm:min-h-20  px-5 flex justify-between items-center relative">
+                <nav className="max-w-310 w-full min-h-20 px-5 flex justify-between items-center relative">
 
                     {/* <span className="text-white bg-brand-navy relative flex justify-center shadow-[0_2px_4px_rgba(0,0,0,0.05),0_12px_24px_rgba(0,0,0,0.5)] items-center border rounded-full px-1">
                         <Home className="absolute text-brand-darkGold z-0 " size={45} />
@@ -62,35 +60,31 @@ const Navbar = () => {
                         <span>EstateHub</span>
                     </div>
 
-                    <div className='hidden mx-auto w-fit absolute inset-x-0  min-[851px]:flex items-center justify-center'>
-                        <NavOp />
+                    <div className='hidden mx-auto w-fit absolute min-[865px]:flex inset-x-0 items-center justify-center'>
+                        <NavOp stylesDiff={' '} />
                     </div>
 
                     <div className='flex  items-center gap-2  text-brand-text'>
                         <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-darkGold border-brand-darkGold'} />
-                        <Menu className='text-brand-text w-6 h-6 sm:w-8 sm:h-8 border-2 p-0.5 rounded cursor-pointer' onClick={() => setShowSideBar(true)} />
+                        <div className='hidden justify-center transition-colors items-center max-[865px]:flex hover:bg-brand-accent gap-1.5 flex-col px-2 py-3 rounded'
+                            onClick={() => setShowMenu(!showMenu)}
+                        >
+                            <span className={`w-6 border transition-transform duration-500 border-brand-text flex ${showMenu ? '-rotate-45 translate-y-2' : ''}`}></span>
+                            <span className={`w-6 border transition-opacity duration-500 border-brand-text flex mr-2 ${showMenu ? 'opacity-0' : 'opacity-100'}`}></span>
+                            <span className={`w-6 border border-brand-text duration-500 flex ${showMenu ? 'rotate-45 -translate-y-2' : ''}`}></span>
+                        </div>
                     </div>
 
                 </nav>
             </header>
 
-            <div className={`fixed right-0 z-50 sm:w-100 w-full  duration-500 ease-in-out transition-transform bg-brand-accent/80 backdrop-blur-md inset-y-0 h-dvh ${showSideBar ? 'translate-x-0' : 'translate-x-full'}  p-3 `}>
+            <div className={`absolute left-0 top-20 z-50 min-[865px]:hidden  w-full grid duration-500 ease-in-out overflow-hidden transition-all bg-brand-accent/80 backdrop-blur-2xl ${showMenu ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}   `}>
 
-                <button className='absolute right-3 top-3 rounded-full p-1 bg-black'>
-                    <X size={30} className='text-brand-text' onClick={() => setShowSideBar(false)} />
-                </button>
-
-                <p className='text-brand-text/80 font-nunito mb-3 border-b border-brand-muted/30 pb-3 '>Buy land,<br /> they're not making it anymore.</p>
-                <div className='min-[851px]:hidden flex mb-3'>
-                    <NavOp />
-                </div>
-                <p className='text-brand-text/80 font-nunito mb-3 pt-3 text-center sm:border-none border-t  border-brand-muted/30 '>
-                    &copy; All right are reserved
-                </p>
+                <NavOp stylesDiff={'flex-col overflow-hidden  p-3'} pWrapper={'overflow-hidden'} />
 
             </div>
 
-        </>
+        </div>
     )
 }
 

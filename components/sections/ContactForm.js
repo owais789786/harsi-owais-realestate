@@ -31,7 +31,7 @@ const ContactForm = () => {
   };    
 
   return (
-    <Card className="w-full p-6 flex flex-col gap-2">
+    <Card className="w-full p-6 flex flex-col col-span-2 gap-2">
       <h2 className="text-brand-navy text-xl font-nunito font-extrabold">
         Send Us a Message
       </h2>

@@ -37,7 +37,7 @@ const team = [
 ];
 
 
-const partners = ["Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN", "Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN","Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN"];
+const partners = ["Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN", "Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN", "Zillow", "REALTOR", "Trulia", "realtor.com", "Homes.com", "REDFIN"];
 
 const AboutUs = () => {
   return (
@@ -106,7 +106,7 @@ const AboutUs = () => {
         {stats.map(({ value, label, icon: Icon }) => (
           <div key={label} className="flex items-center gap-3 rounded-xl border border-brand-muted/40 bg-white p-4 shadow-sm">
             <div className="flex size-12 shrink-0 items-center justify-center bg-brand-gold/10 text-brand-darkGold"><Icon className="text-3xl" /></div>
-            <p className="flex flex-col"><span className="text-2xl font-extrabold">{value}</span><span className="text-xs text-slate-500">{label}</span></p>
+            <p className="flex flex-col"><span className="text-xl font-extrabold">{value}</span><span className="text-xs text-slate-500">{label}</span></p>
           </div>
         ))}
       </section>
@@ -170,11 +170,14 @@ const AboutUs = () => {
         </div>
       </section>
 
-   <Testimonials />   
+      <Testimonials />
 
       <section className="overflow-hidden border-y border-slate-200 bg-slate-50 py-8">
-        <div className="m-auto max-w-310 px-5 text-center"><p className="font-bold text-brand-darkGold">OUR PARTNERS</p><h2 className="mt-2 text-2xl font-extrabold text-brand-accent">Trusted by Leading Brands</h2></div>
-        <div className="partner-swiper mt-7">
+        <div className="m-auto max-w-310 px-5 text-center">
+          <p className="font-bold text-brand-darkGold">OUR PARTNERS</p>
+          <h2 className="mt-2 text-2xl font-extrabold text-brand-accent">Trusted by Leading Brands</h2>
+        </div>
+        <div className="partner-swiper mt-7 bg-brand-navy m-auto py-10 rounded-2xl  max-w-310">
           <Swiper
             modules={[Autoplay]}
             slidesPerView="auto"
@@ -185,9 +188,9 @@ const AboutUs = () => {
             allowTouchMove={false}
             className="linear-swiper"
           >
-            {partners.map((brand) => (
-              <SwiperSlide key={brand} style={{ width: 'auto' }}>
-                <span className="text-xl font-bold text-brand-navy/60 whitespace-nowrap">
+            {partners.map((brand,idx) => (
+              <SwiperSlide key={`${idx}`} style={{ width: 'auto' }}>
+                <span className="text-xl  font-bold text-brand-text whitespace-nowrap">
                   {brand}
                 </span>
               </SwiperSlide>
@@ -196,7 +199,17 @@ const AboutUs = () => {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-brand-accent px-5 py-16 text-white"><Image src="/BgImage.avif" alt="EstateHub property at dusk" fill className="object-cover opacity-25" /><div className="relative m-auto flex max-w-310 flex-col gap-6 md:flex-row md:items-center md:justify-between"><div><p className="font-bold text-brand-gold">START YOUR NEXT CHAPTER</p><h2 className="mt-2 max-w-lg text-3xl font-extrabold">Ready to Find Your Perfect Space?</h2><p className="mt-3 max-w-lg text-white/70">Let&apos;s work together to turn your real estate goals into reality.</p></div><Button content="Get in Touch" colors="bg-brand-darkGold text-white border-brand-darkGold hover:bg-transparent hover:border-white" /></div></section>
+      <section className="relative overflow-hidden bg-brand-accent px-5 py-16 text-white">
+        <Image src="/BgImage.avif" alt="EstateHub property at dusk" fill className="object-cover opacity-25" />
+        <div className="relative m-auto flex max-w-310 flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p className="font-bold text-brand-gold">START YOUR NEXT CHAPTER</p>
+            <h2 className="mt-2 max-w-lg text-3xl font-extrabold">Ready to Find Your Perfect Space?</h2>
+            <p className="mt-3 max-w-lg text-white/70">Let&apos;s work together to turn your real estate goals into reality.</p>
+          </div>
+          <Button content="Get in Touch" colors="bg-brand-darkGold text-white border-brand-darkGold hover:bg-transparent hover:border-white" />
+        </div>
+      </section>
     </main>
   );
 };

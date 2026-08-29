@@ -16,10 +16,9 @@ const NavOp = ({ stylesDiff, pWrapper }) => {
         { name: 'Contact', ref: '/contact' }
     ];
 
-
     return (
         <div className={`${pWrapper}`}>
-            <ul className={`flex gap-4 ${stylesDiff} font-syne w-full items-center  `}>
+            <ul className={`flex gap-6 ${stylesDiff} font-syne w-full items-center  `}>
                 {navOp.map((op) => {
                     const isActive = pathname === op.ref
                     return (

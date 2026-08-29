@@ -17,7 +17,7 @@ const Testimonials = () => {
     ];
 
     return (
-        <section className="bg-brand-navy px-5 py-16 text-white">
+        <section className="bg-brand-text px-5 py-16 text-brand-navy">
             <div className="m-auto max-w-310">
                 <p className="font-bold text-brand-gold">TESTIMONIALS</p>
                 <h2 className="mt-2 max-w-md text-3xl font-extrabold">What Our Clients Say About Us</h2>
@@ -32,7 +32,7 @@ const Testimonials = () => {
                 >
                     {testimonials.map((item) => (
                         <SwiperSlide key={item.name}>
-                            <article className="h-full rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                            <article className="h-full rounded-xl border border-white/10 bg-brand-navy p-6 backdrop-blur-sm">
                                 <Quote className="mb-5 text-brand-gold" size={26} />
                                 <p className="min-h-20 text-sm leading-relaxed text-white/80">{item.quote}</p>
                                 <div className="mt-6 flex items-center gap-3 border-t border-white/10 pt-4"><span className="flex size-9 items-center justify-center rounded-full bg-brand-darkGold font-bold text-white">{item.name.charAt(0)}</span><p><span className="block font-bold">{item.name}</span><span className="text-xs text-white/50">{item.role}</span></p></div>

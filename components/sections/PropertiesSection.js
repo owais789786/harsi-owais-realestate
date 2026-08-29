@@ -129,7 +129,7 @@ const PropertiesSection = ({
                     ))}
                 </div>
 
-                <div className="flex justify-center pt-10"><Button content={ctaText} colors={variant == 'sale' ? 'bg-brand-darkGold text-brand-text border-brand-darkGold hover:text-brand-gold hover:bg-transparent' : 'bg-brand-navy text-brand-text border-brand-navy hover:bg-transparent hover:text-brand-navy'} /></div>
+                <div className="flex justify-center pt-10"><Button content={ctaText} colors={variant == 'sale' ? 'bg-brand-darkGold text-brand-text border-brand-darkGold hover:border-brand-text hover:text-brand-text hover:bg-transparent' : 'bg-brand-navy text-brand-text border-brand-navy hover:bg-transparent hover:text-brand-navy'} /></div>
             </div>
         </section>
     )

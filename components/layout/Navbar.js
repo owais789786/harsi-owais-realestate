@@ -70,7 +70,7 @@ const Navbar = () => {
                     </div>
 
                     <div className='flex  items-center gap-2  text-brand-text'>
-                        <Button content={'List Your Property'} colors={'text-brand-text hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-darkGold border-brand-darkGold'} />
+                        <Button content={'Contact Us'} colors={'text-brand-text hidden sm:flex hover:bg-transparent hover:[text-shadow:0_2px_4px_rgba(0,0,0,1.5)]  hover:border-brand-text bg-brand-darkGold border-brand-darkGold'} />
                         <div className='hidden justify-center transition-colors items-center max-[865px]:flex hover:bg-brand-accent gap-1.5 flex-col px-2 py-3 rounded'
                             onClick={() => setShowMenu(!showMenu)}
                         >
